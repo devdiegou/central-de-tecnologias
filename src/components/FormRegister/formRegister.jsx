@@ -20,7 +20,7 @@ export const FormRegister = () => {
     try {
       const { data } = await api.post("/users", formData);
       toast.success("Usuário cadastrado com sucesso!");
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       toast.error("Usuário já cadastrado.");
     }
