@@ -7,7 +7,7 @@ export const DashboardPage = ({ user, setUser }) => {
   const clear = () => {
     localStorage.clear();
     setUser("");
-    navigate("/");
+    navigate("/")
   };
 
   return (
