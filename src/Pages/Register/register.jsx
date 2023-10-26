@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { FormRegister } from "../../components/FormRegister/formRegister";
 import style from "./register.module.scss";
+import { useState } from "react";
 
 
 export const RegisterPage = () => {
+
   return (
     <>
       <div className={style.register__container}>

@@ -1,0 +1,30 @@
+.select__div {
+  width: 301px;
+  height: 67px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+
+  label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #f8f9fa;
+  }
+
+  select {
+    width: 300px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    border: 1px solid #343b41;
+    background-color: #343b41;
+    color: #868e96;
+    -webkit-appearance: none;
+    /* Remove estilo padrão do Chrome */
+    -moz-appearance: none;
+    /* Remove estilo padrão do FireFox */
+    appearance: none;
+    /* Remove estilo padrão do FireFox*/
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #343b41;
+  }
+}
