@@ -1,30 +1,33 @@
-import { useEffect, useRef } from "react";
-import { Input } from "../Input/input"
+import { Input } from "../Input/input";
 import style from "./formRegister.module.scss";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formRegisterSchema } from "../../Schema/formRegisterSchema";
 import { api } from "../../api";
 import { Select } from "../Select/select";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export const FormRegister = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(formRegisterSchema)
   });
 
+  const navigate = useNavigate();
+
   const userRegister = async (formData) => {
     try {
-      const {data} = await api.post("/users", formData)
+      const { data } = await api.post("/users", formData);
+      toast.success("Usuário cadastrado com sucesso!");
+      navigate("/dashboard");
     } catch (error) {
-      
+      toast.error("Usuário já cadastrado.");
     }
-  }
-
-  const ref = useRef(null);
+  };
 
   const submit = (formData) => {
-    console.log(formData)
+    userRegister(formData);
   };
 
   return (
@@ -49,7 +52,7 @@ export const FormRegister = () => {
 
         <button className={style.confirm__btn}>Registrar</button>
       </form>
-
+      <ToastContainer />
     </>
   );
 };

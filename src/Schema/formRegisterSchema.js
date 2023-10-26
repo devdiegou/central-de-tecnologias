@@ -14,9 +14,10 @@ export const formRegisterSchema = z.object({
   .string()
   .nonempty("Este campo é obrigatório.")
   .min(8, "Deve conter, pelo menos, 8 caracteres.")
-  .regex(/(?=.*?[A-Z])/, "Deve conter, pelo menos, uma letra maiúscula.")
-  .regex(/(?=.*?[a-z])/, "Deve conter, pelo menos, uma letra minúscula.")
-  .regex(/(?=.*?[0-9])/, "Deve conter, pelo menos, um número."),
+  .regex(/(?=.*?[A-Z])/, "A senha deve conter, pelo menos, uma letra maiúscula.")
+  .regex(/(?=.*?[a-z])/, "A senha deve conter, pelo menos, uma letra minúscula.")
+  .regex(/(?=.*?[0-9])/, "A senha deve conter, pelo menos, um número.")
+  .regex(/(?=.*?[#?!@$%^&*-])/, "A senha deve conter, pelo menos, um caractere especial"),
 
   confirmPassword: z
   .string()
