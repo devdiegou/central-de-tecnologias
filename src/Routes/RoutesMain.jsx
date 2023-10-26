@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import { DashboardPage } from "../Pages/Dashboard/dashboard";
-import { LoginPage } from "../pages/Login/login";
-import { RegisterPage } from "../Pages/Register/register";
+import { DashboardPage } from "../Pages/Dashboard/dashboard.jsx";
+import { LoginPage } from "../pages/Login/login.jsx";
+import { RegisterPage } from "../Pages/Register/register.jsx";
 import { useState } from "react";
 
 export const RoutesMain = () => {
