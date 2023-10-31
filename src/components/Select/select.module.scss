@@ -25,3 +25,13 @@
     background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #343b41;
   }
 }
+
+@media (max-width: 320px) {
+  .select__div {
+    width: 250px;
+
+    select {
+    width: 250px;
+    }
+  }
+}

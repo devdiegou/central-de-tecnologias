@@ -5,6 +5,7 @@ import { RegisterPage } from "../pages/Register/register";
 import { DashboardPage } from "../pages/Dashboard/dashboard";
 import { UserContext } from "../providers/userContext";
 import { ProtectedRoutes } from "../components/ProtectedRoutes/protectedRoute";
+import { TechProvider } from "../providers/TechContext";
 
 export const RoutesMain = () => {
   const { user } = useContext(UserContext);
@@ -17,7 +18,11 @@ export const RoutesMain = () => {
       <Route path="/dashboard" element={<ProtectedRoutes />}>
         <Route
           index
-          element={<DashboardPage user={user} setUser={setUser} />}
+          element={
+            <TechProvider>
+              <DashboardPage user={user} setUser={setUser} />
+            </TechProvider>
+          }
         />
       </Route>
     </Routes>

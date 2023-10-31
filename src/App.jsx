@@ -1,16 +1,19 @@
-import "./reset.css";
-import "./container.css";
-import "./body.css";
+import "./reset.scss";
+import "./container.scss";
+import "./body.scss";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RoutesMain } from "./Routes/RoutesMain";
+import { TechProvider } from "./providers/TechContext";
 
 function App() {
   return (
-      <main>
+    <main>
+      <TechProvider>
         <RoutesMain />
-        <ToastContainer />
-      </main>
+      </TechProvider>
+      <ToastContainer />
+    </main>
   );
-};
-export default App
+}
+export default App;

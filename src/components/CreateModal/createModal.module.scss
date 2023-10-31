@@ -1,0 +1,102 @@
+.modalOverlay{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.3);
+}
+
+.modalBox {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+
+  
+}
+
+.tech__header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  background-color: #343b41;
+  border-radius: 4px 4px 0px 0px;
+
+  h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 20px;
+  }
+
+  .close__btn {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #868e96;
+    cursor: pointer;
+  }
+
+}
+
+.tech__div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #212529;
+  padding: 16px 20px;
+  gap: 22px;
+
+  .select__div {
+    width: 301px;
+    height: 67px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  
+    label {
+      font-size: 12px;
+      font-weight: 400;
+      color: #f8f9fa;
+    }
+  
+    select {
+      width: 300px;
+      padding: 10px 16px;
+      border-radius: 4px;
+      background-color: #343b41;
+      color: #868e96;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #343b41;
+    }
+
+    select:focus {
+      border: 1.2px solid #f8f9fa;
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 48px;
+    padding: 0 22px;
+    border-radius: 5px;
+    border: 1px solid #ff577f ;
+    background: #ff577f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+  }
+}

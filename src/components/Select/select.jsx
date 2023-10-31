@@ -9,9 +9,14 @@ export const Select = forwardRef(({ label, error, ...rest }, ref) => {
         <option value="" disabled autoFocus>
           Selecione um módulo
         </option>
-        <option value="Modulo 1">Módulo 1</option>
-        <option value="Modulo 2">Módulo 2</option>
-        <option value="Modulo 3">Módulo 3</option>
+        <option value="Primeiro módulo (Introdução ao Frontend)">
+          Módulo 1
+        </option>
+        <option value="Segundo módulo (Frontend Avançado)">Módulo 2</option>
+        <option value="Terceiro módulo (Introdução ao Backend)">
+          Módulo 3
+        </option>
+        <option value="Quarto módulo (Backend Avançado)">Módulo 4</option>
       </select>
       {error ? <p>{error.message}</p> : null}
     </div>

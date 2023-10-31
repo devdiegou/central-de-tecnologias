@@ -20,6 +20,10 @@
     background-color: #343b41;
     color: #868e96;
   }
+
+  input:focus {
+    border: 1.2px solid #f8f9fa;
+  }
 }
 
 @media (max-width: 320px) {
