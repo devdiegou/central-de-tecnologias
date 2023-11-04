@@ -57,26 +57,6 @@ export const TechProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const loadUser = async () => {
-  //     const token = localStorage.getItem("@TOKEN");
-  //     if (token) {
-  //       try {
-  //         const { data } = await api.get("/profile", {
-  //           headers: { Authorization: `Bearer ${token}` },
-  //         });
-  //         setUser(data);
-  //         setTechList(user.techs);
-  //         navigate("/dashboard");
-  //       } catch (error) {
-  //         console.log(error);
-  //         localStorage.clear();
-  //       }
-  //     }
-  //   };
-  //   loadUser();
-  // }, []);
-
   const techDelete = async (deletingId) => {
     try {
       const token = localStorage.getItem("@TOKEN");
