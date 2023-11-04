@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../api";
+import { TechContext } from "./TechContext";
 
 export const UserContext = createContext({});
 
@@ -35,6 +36,26 @@ export const UserProvider = ({ children }) => {
       toast.error("Email ou senha incorretos!");
     }
   };
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const token = localStorage.getItem("@TOKEN");
+      if (token) {
+        try {
+          const { data } = await api.get("/profile", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          setUser(data);
+          navigate("/dashboard");
+        } catch (error) {
+          console.log(error);
+          localStorage.clear();
+        }
+      }
+    };
+    loadUser();
+    console.log(user)
+  }, []);
 
   const logout = () => {
     localStorage.clear();

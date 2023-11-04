@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import style from "./techList.module.scss";
 import { TechContext } from "../../providers/TechContext";
-import { UserContext } from "../../providers/userContext";
 
 export const TechList = () => {
-  const { techList, setEditingTech, techDelete } = useContext(TechContext);
+  const { setEditingTech, techDelete } = useContext(TechContext);
+  const { techList } = useContext(TechContext);
 
   return (
     <ul className={style.ul}>

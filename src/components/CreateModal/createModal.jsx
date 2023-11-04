@@ -4,9 +4,17 @@ import { UserContext } from "../../providers/userContext";
 import { Input } from "../Input/input";
 import style from "./createModal.module.scss";
 import { TechContext } from "../../providers/TechContext";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { addTechSchema } from "../../Schema/addTechSchema";
 
 export const CreateTechModal = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(addTechSchema),
+  });
   const { setOpenCreate } = useContext(UserContext);
   const { createPost } = useContext(TechContext);
 
@@ -29,13 +37,16 @@ export const CreateTechModal = () => {
           </div>
 
           <div className={style.tech__div}>
-            <Input
-              label="Nome"
-              type="text"
-              placeholder="Digite o nome da tecnologia"
-              {...register("title")}
-            />
-
+            <div className={style.div__input}>
+              <label>Nome</label>
+              <input
+                label="Nome"
+                type="text"
+                placeholder="Digite o nome da tecnologia"
+                error={errors.title}
+                {...register("title")}
+              />
+            </div>
             <div className={style.select__div}>
               <label>Selecionar status</label>
               <select {...register("status")}>

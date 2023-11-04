@@ -7,11 +7,12 @@ import { useNavigate } from "react-router-dom";
 export const TechContext = createContext({});
 
 export const TechProvider = ({ children }) => {
-  const [techList, setTechList] = useState([]);
+  const { user, setUser } = useContext(UserContext);
+
+  const [techList, setTechList] = useState(user?.techs ? user.techs : []);
 
   const [editingTech, setEditingTech] = useState(null);
 
-  const { user, setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -56,25 +57,25 @@ export const TechProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    const loadUser = async () => {
-      const token = localStorage.getItem("@TOKEN");
-      if (token) {
-        try {
-          const { data } = await api.get("/profile", {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-          setUser(data);
-          setTechList(user.techs);
-          navigate("/dashboard");
-        } catch (error) {
-          console.log(error);
-          localStorage.clear();
-        }
-      }
-    };
-    loadUser();
-  }, []);
+  // useEffect(() => {
+  //   const loadUser = async () => {
+  //     const token = localStorage.getItem("@TOKEN");
+  //     if (token) {
+  //       try {
+  //         const { data } = await api.get("/profile", {
+  //           headers: { Authorization: `Bearer ${token}` },
+  //         });
+  //         setUser(data);
+  //         setTechList(user.techs);
+  //         navigate("/dashboard");
+  //       } catch (error) {
+  //         console.log(error);
+  //         localStorage.clear();
+  //       }
+  //     }
+  //   };
+  //   loadUser();
+  // }, []);
 
   const techDelete = async (deletingId) => {
     try {

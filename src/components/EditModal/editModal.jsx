@@ -32,13 +32,15 @@ export const EditTechModal = () => {
           </div>
 
           <div className={style.tech__div}>
-            <Input
-              label="Nome"
-              type="text"
-              placeholder="Tecnologia"
-              {...register("title")}
-            />
-
+            <div className={style.div__input}>
+              <label>Nome</label>
+              <input
+                label="Nome"
+                type="text"
+                placeholder="Tecnologia"
+                {...register("title")}
+              />
+            </div>
             <div className={style.select__div}>
               <label>Status</label>
               <select {...register("status")}>
