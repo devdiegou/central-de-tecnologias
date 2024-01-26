@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../providers/userContext";
-import { Input } from "../Input/input";
 import style from "./createModal.module.scss";
 import { TechContext } from "../../providers/TechContext";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,6 +19,7 @@ export const CreateTechModal = () => {
 
   const submit = (formData) => {
     createPost(formData);
+    setOpenCreate(false);
   };
 
   return (
