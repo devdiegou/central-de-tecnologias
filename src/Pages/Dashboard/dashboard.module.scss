@@ -9,6 +9,12 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff577f;
+  }
+
   button {
     width: 15%;
     height: 32px;
