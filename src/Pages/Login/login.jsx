@@ -3,7 +3,7 @@ import { FormLogin } from "../../components/FormLogin/formLogin";
 import style from "./login.module.scss";
 import { UserContext } from "../../providers/userContext";
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const { setUser } = useContext(UserContext);
 
   return (
@@ -19,4 +19,3 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
