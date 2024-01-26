@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { useContext } from "react";
-import { LoginPage } from "../pages/Login/login";
+import { LoginPage } from "../src/pages/Login/login";
 import { RegisterPage } from "../pages/Register/register";
 import { DashboardPage } from "../Pages/Dashboard/dashboard";
 import { UserContext } from "../providers/userContext";
